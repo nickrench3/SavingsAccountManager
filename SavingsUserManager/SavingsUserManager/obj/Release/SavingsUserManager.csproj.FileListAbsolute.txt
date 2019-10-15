@@ -1,0 +1,10 @@
+C:\Projects\SavingsUserManager\SavingsUserManager\bin\Release\SavingsUserManager.exe.config
+C:\Projects\SavingsUserManager\SavingsUserManager\bin\Release\SavingsUserManager.exe
+C:\Projects\SavingsUserManager\SavingsUserManager\bin\Release\SavingsUserManager.pdb
+C:\Projects\SavingsUserManager\SavingsUserManager\obj\Release\SavingsUserManager.csprojAssemblyReference.cache
+C:\Projects\SavingsUserManager\SavingsUserManager\obj\Release\SavingsUserManager.Form1.resources
+C:\Projects\SavingsUserManager\SavingsUserManager\obj\Release\SavingsUserManager.Properties.Resources.resources
+C:\Projects\SavingsUserManager\SavingsUserManager\obj\Release\SavingsUserManager.csproj.GenerateResource.cache
+C:\Projects\SavingsUserManager\SavingsUserManager\obj\Release\SavingsUserManager.csproj.CoreCompileInputs.cache
+C:\Projects\SavingsUserManager\SavingsUserManager\obj\Release\SavingsUserManager.exe
+C:\Projects\SavingsUserManager\SavingsUserManager\obj\Release\SavingsUserManager.pdb
