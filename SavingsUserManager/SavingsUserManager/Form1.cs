@@ -27,11 +27,11 @@ namespace SavingsUserManager
             try
             {
                 con.Open();
-                cmd = new SqlCommand("SELECT * FROM Login", con);
+                cmd = new SqlCommand("SELECT LoginName FROM Login", con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    string userName = (dr["USERNAME"].ToString());
+                    string userName = (dr["LoginName"].ToString());
                     comboBox1.Items.Add(userName);
 
                 }
@@ -39,7 +39,7 @@ namespace SavingsUserManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                
             }
         }
 
@@ -49,7 +49,7 @@ namespace SavingsUserManager
             MessageBox.Show(message, "Delete User", MessageBoxButtons.OK, MessageBoxIcon.Information);
             string user = comboBox1.Text.Trim();
             con.Open();
-            cmd = new SqlCommand("DELETE Login WHERE USERNAME='" + user + "'", con);
+            cmd = new SqlCommand("DELETE Login WHERE LoginName='" + user + "'", con);
             cmd.ExecuteNonQuery();
             con.Close();
             comboBox1.Text = "";
