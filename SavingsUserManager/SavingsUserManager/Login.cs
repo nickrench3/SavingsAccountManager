@@ -29,7 +29,7 @@ namespace SavingsUserManager
             sda.Fill(dt);
             if (dt.Rows.Count == 1)
             {
-                cmd = new SqlCommand("INSERT LOGINEVENTLOG VALUES('" + userNameTextBox.Text.Trim() + "', '" + DateTime.Now + "', 'Truck Show Shirts')", conSecure);
+                cmd = new SqlCommand("INSERT LOGINEVENTLOG VALUES('" + userNameTextBox.Text.Trim() + "', '" + DateTime.Now + "', 'Savings User Manager')", conSecure);
                 cmd.ExecuteNonQuery();
                 conSecure.Close();
                 Form1 form1 = new Form1();
