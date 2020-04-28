@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,48 @@ namespace SavingsUserManager
 {
     public partial class Login : Form
     {
+        private SqlConnection conSecure = new SqlConnection(@"Data Source=NICKRENTSCHLER\SQLEXPRESS;Initial Catalog=Security;Integrated Security=True;Pooling=False");
+        private SqlCommand cmd;
+
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            conSecure.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT UserID FROM [dbo].[Login] WHERE LoginName='nickrench3' AND PasswordHash=HASHBYTES('SHA2_512', N'" + passwordTextBox.Text + "') AND Added='Y'", conSecure);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows.Count == 1)
+            {
+                cmd = new SqlCommand("INSERT LOGINEVENTLOG VALUES('" + userNameTextBox.Text.Trim() + "', '" + DateTime.Now + "', 'Truck Show Shirts')", conSecure);
+                cmd.ExecuteNonQuery();
+                conSecure.Close();
+                Form1 form1 = new Form1();
+                form1.Show();
+                this.Owner = form1;
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("You do not have access to this application!", "Error");
+                conSecure.Close();
+            }
+        }
+
+        private void Form1_FormClosed(object send, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void registerButton_Click(object sender, EventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
+            this.Owner = register;
+            this.Hide();
         }
     }
 }

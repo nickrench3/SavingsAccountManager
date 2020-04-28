@@ -16,3 +16,6 @@ C:\GitHub\SavingsAccountManager\SavingsUserManager\SavingsUserManager\obj\Debug\
 C:\GitHub\SavingsAccountManager\SavingsUserManager\SavingsUserManager\obj\Debug\SavingsUserManager.csproj.GenerateResource.cache
 C:\GitHub\SavingsAccountManager\SavingsUserManager\SavingsUserManager\obj\Debug\SavingsUserManager.exe
 C:\GitHub\SavingsAccountManager\SavingsUserManager\SavingsUserManager\obj\Debug\SavingsUserManager.pdb
+C:\GitHub\SavingsAccountManager\SavingsUserManager\SavingsUserManager\obj\Debug\SavingsUserManager.Login.resources
+C:\GitHub\SavingsAccountManager\SavingsUserManager\SavingsUserManager\obj\Debug\SavingsUserManager.csproj.CoreCompileInputs.cache
+C:\GitHub\SavingsAccountManager\SavingsUserManager\SavingsUserManager\obj\Debug\SavingsUserManager.Register.resources
