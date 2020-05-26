@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.delButton = new System.Windows.Forms.Button();
+            this.aprvButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.delButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.aprvButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -52,15 +52,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Approve";
             // 
-            // delButton
+            // aprvButton
             // 
-            this.delButton.Location = new System.Drawing.Point(96, 131);
-            this.delButton.Name = "delButton";
-            this.delButton.Size = new System.Drawing.Size(111, 43);
-            this.delButton.TabIndex = 5;
-            this.delButton.Text = "DELETE";
-            this.delButton.UseVisualStyleBackColor = true;
-            this.delButton.Click += new System.EventHandler(this.delButton_Click_1);
+            this.aprvButton.Location = new System.Drawing.Point(88, 131);
+            this.aprvButton.Name = "aprvButton";
+            this.aprvButton.Size = new System.Drawing.Size(111, 43);
+            this.aprvButton.TabIndex = 5;
+            this.aprvButton.Text = "APPROVE";
+            this.aprvButton.UseVisualStyleBackColor = true;
+            this.aprvButton.Click += new System.EventHandler(this.aprvButton_Click);
             // 
             // label1
             // 
@@ -71,6 +71,25 @@
             this.label1.Size = new System.Drawing.Size(71, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "Username";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(114, 47);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(160, 24);
+            this.comboBox2.TabIndex = 3;
+            // 
+            // delButton
+            // 
+            this.delButton.Location = new System.Drawing.Point(96, 131);
+            this.delButton.Name = "delButton";
+            this.delButton.Size = new System.Drawing.Size(111, 43);
+            this.delButton.TabIndex = 5;
+            this.delButton.Text = "DELETE";
+            this.delButton.UseVisualStyleBackColor = true;
+            this.delButton.Click += new System.EventHandler(this.delButton_Click_1);
             // 
             // comboBox1
             // 
@@ -93,16 +112,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Delete";
             // 
-            // aprvButton
-            // 
-            this.aprvButton.Location = new System.Drawing.Point(88, 131);
-            this.aprvButton.Name = "aprvButton";
-            this.aprvButton.Size = new System.Drawing.Size(111, 43);
-            this.aprvButton.TabIndex = 5;
-            this.aprvButton.Text = "APPROVE";
-            this.aprvButton.UseVisualStyleBackColor = true;
-            this.aprvButton.Click += new System.EventHandler(this.aprvButton_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -112,15 +121,6 @@
             this.label2.Size = new System.Drawing.Size(71, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Username";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(114, 47);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(160, 24);
-            this.comboBox2.TabIndex = 3;
             // 
             // Form1
             // 
@@ -133,7 +133,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Savings User Manager";
+            this.Text = "User Manager";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
