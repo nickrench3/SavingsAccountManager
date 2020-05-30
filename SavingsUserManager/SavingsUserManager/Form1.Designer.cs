@@ -37,10 +37,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.savingsCheckbox = new System.Windows.Forms.CheckBox();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.savingsCheckbox = new System.Windows.Forms.CheckBox();
+            this.savingsApproveCheck = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -48,6 +49,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.savingsApproveCheck);
             this.groupBox1.Controls.Add(this.aprvButton);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.comboBox2);
@@ -141,6 +143,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Manage";
             // 
+            // savingsCheckbox
+            // 
+            this.savingsCheckbox.AutoSize = true;
+            this.savingsCheckbox.Location = new System.Drawing.Point(88, 92);
+            this.savingsCheckbox.Name = "savingsCheckbox";
+            this.savingsCheckbox.Size = new System.Drawing.Size(76, 20);
+            this.savingsCheckbox.TabIndex = 6;
+            this.savingsCheckbox.Text = "Savings";
+            this.savingsCheckbox.UseVisualStyleBackColor = true;
+            // 
             // UpdateButton
             // 
             this.UpdateButton.Location = new System.Drawing.Point(70, 138);
@@ -171,15 +183,15 @@
             this.comboBox3.TabIndex = 3;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
-            // savingsCheckbox
+            // savingsApproveCheck
             // 
-            this.savingsCheckbox.AutoSize = true;
-            this.savingsCheckbox.Location = new System.Drawing.Point(88, 92);
-            this.savingsCheckbox.Name = "savingsCheckbox";
-            this.savingsCheckbox.Size = new System.Drawing.Size(76, 20);
-            this.savingsCheckbox.TabIndex = 6;
-            this.savingsCheckbox.Text = "Savings";
-            this.savingsCheckbox.UseVisualStyleBackColor = true;
+            this.savingsApproveCheck.AutoSize = true;
+            this.savingsApproveCheck.Location = new System.Drawing.Point(88, 87);
+            this.savingsApproveCheck.Name = "savingsApproveCheck";
+            this.savingsApproveCheck.Size = new System.Drawing.Size(76, 20);
+            this.savingsApproveCheck.TabIndex = 7;
+            this.savingsApproveCheck.Text = "Savings";
+            this.savingsApproveCheck.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -219,6 +231,7 @@
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.CheckBox savingsApproveCheck;
     }
 }
 

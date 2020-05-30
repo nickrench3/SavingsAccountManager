@@ -111,12 +111,20 @@ namespace SavingsUserManager
             string message = comboBox2.Text + " Approved";
             MessageBox.Show(message, "Approve User", MessageBoxButtons.OK, MessageBoxIcon.Information);
             string user = comboBox2.Text.Trim();
+            if (savingsApproveCheck.Checked == true)
+            {
+                cmd = new SqlCommand("UPDATE Login SET Added='Y', Savings = 1 WHERE LoginName='" + user + "'", con);
+            }
+            else
+            {
+                cmd = new SqlCommand("UPDATE Login SET Added='Y', Savings = 0 WHERE LoginName='" + user + "'", con);
+            }
             con.Open();
-            cmd = new SqlCommand("UPDATE Login SET Added='Y' WHERE LoginName='" + user + "'", con);
             cmd.ExecuteNonQuery();
             con.Close();
             comboBox2.Text = "";
             comboBox2.Items.Clear();
+            savingsApproveCheck.Checked = false;
             fillCombo1();
         }
 
@@ -133,18 +141,15 @@ namespace SavingsUserManager
             string userName = comboBox3.SelectedItem.ToString();
             if (savingsCheckbox.Checked == true)
             {
-                con.Open();
                 cmd = new SqlCommand("UPDATE Login SET Savings = 1 WHERE LoginName='" + userName + "'", con);
-                cmd.ExecuteNonQuery();
-                con.Close();
             }
             else
             {
-                con.Open();
                 cmd = new SqlCommand("UPDATE Login SET Savings = 0 WHERE LoginName='" + userName + "'", con);
-                cmd.ExecuteNonQuery();
-                con.Close();
             }
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }
