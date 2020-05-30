@@ -54,13 +54,40 @@ namespace SavingsUserManager
                 {
                     string userName = (dr["LoginName"].ToString());
                     comboBox1.Items.Add(userName);
-
+                    comboBox3.Items.Add(userName);
                 }
                 con.Close();
             }
             catch (Exception ex)
             {
                 
+            }
+        }
+
+        void savingsCheck(string userName)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("SELECT Savings from Login WHERE LoginName = '"+userName+"'", con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    bool savings = (bool)dr["Savings"];
+                    if (savings == true)
+                    {
+                        savingsCheckbox.Checked = true;
+                    }
+                    else
+                    {
+                        savingsCheckbox.Checked = false;
+                    }
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 
@@ -75,6 +102,7 @@ namespace SavingsUserManager
             con.Close();
             comboBox1.Text = "";
             comboBox1.Items.Clear();
+            comboBox3.Items.Clear();
             fillCombo2();
         }
 
@@ -90,6 +118,33 @@ namespace SavingsUserManager
             comboBox2.Text = "";
             comboBox2.Items.Clear();
             fillCombo1();
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string userName = comboBox3.SelectedItem.ToString();
+            savingsCheck(userName);
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            string message = comboBox3.Text + " Updated";
+            MessageBox.Show(message, "Update User", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string userName = comboBox3.SelectedItem.ToString();
+            if (savingsCheckbox.Checked == true)
+            {
+                con.Open();
+                cmd = new SqlCommand("UPDATE Login SET Savings = 1 WHERE LoginName='" + userName + "'", con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            else
+            {
+                con.Open();
+                cmd = new SqlCommand("UPDATE Login SET Savings = 0 WHERE LoginName='" + userName + "'", con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
         }
     }
 }

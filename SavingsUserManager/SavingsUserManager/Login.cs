@@ -24,7 +24,7 @@ namespace SavingsUserManager
         private void loginButton_Click(object sender, EventArgs e)
         {
             conSecure.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT UserID FROM [dbo].[Login] WHERE LoginName='nickrench3' AND PasswordHash=HASHBYTES('SHA2_512', N'" + passwordTextBox.Text + "') AND Added='Y'", conSecure);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT UserID FROM [dbo].[Login] WHERE LoginName='"+userNameTextBox.Text+"' AND PasswordHash=HASHBYTES('SHA2_512', N'" + passwordTextBox.Text + "') AND Added='Y' and Savings = 1", conSecure);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows.Count == 1)

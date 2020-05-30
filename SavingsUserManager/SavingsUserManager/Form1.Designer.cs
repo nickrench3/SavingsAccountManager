@@ -36,8 +36,14 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.UpdateButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.savingsCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -122,11 +128,65 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Username";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.savingsCheckbox);
+            this.groupBox3.Controls.Add(this.UpdateButton);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Location = new System.Drawing.Point(189, 295);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(301, 242);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Manage";
+            // 
+            // UpdateButton
+            // 
+            this.UpdateButton.Location = new System.Drawing.Point(70, 138);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(111, 43);
+            this.UpdateButton.TabIndex = 5;
+            this.UpdateButton.Text = "UPDATE";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 55);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 16);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Username";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(114, 47);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(160, 24);
+            this.comboBox3.TabIndex = 3;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // savingsCheckbox
+            // 
+            this.savingsCheckbox.AutoSize = true;
+            this.savingsCheckbox.Location = new System.Drawing.Point(88, 92);
+            this.savingsCheckbox.Name = "savingsCheckbox";
+            this.savingsCheckbox.Size = new System.Drawing.Size(76, 20);
+            this.savingsCheckbox.TabIndex = 6;
+            this.savingsCheckbox.Text = "Savings";
+            this.savingsCheckbox.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 315);
+            this.ClientSize = new System.Drawing.Size(670, 549);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -138,6 +198,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -152,6 +214,11 @@
         private System.Windows.Forms.Button aprvButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.CheckBox savingsCheckbox;
+        private System.Windows.Forms.Button UpdateButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }
 
