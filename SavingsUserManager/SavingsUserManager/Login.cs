@@ -5,6 +5,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,10 +17,14 @@ namespace SavingsUserManager
     {
         private SqlConnection conSecure = new SqlConnection(@"Data Source=NICKRENTSCHLER\SQLEXPRESS01;Initial Catalog=Security;Integrated Security=True;Pooling=False");
         private SqlCommand cmd;
+        private string LastIP = "";
+        private string HostName = "";
 
         public Login()
         {
             InitializeComponent();
+            LastIP = GetLocalIPAddress();
+            HostName = Dns.GetHostName();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -29,7 +35,7 @@ namespace SavingsUserManager
             sda.Fill(dt);
             if (dt.Rows.Count == 1)
             {
-                cmd = new SqlCommand("INSERT LOGINEVENTLOG VALUES('" + userNameTextBox.Text.Trim() + "', '" + DateTime.Now + "', 'Savings User Manager')", conSecure);
+                cmd = new SqlCommand("INSERT LOGINEVENTLOG VALUES('" + userNameTextBox.Text.Trim() + "', '" + DateTime.Now + "', 'Savings User Manager', '" + LastIP + "', '" + HostName + "')", conSecure);
                 cmd.ExecuteNonQuery();
                 conSecure.Close();
                 Form1 form1 = new Form1();
@@ -47,6 +53,19 @@ namespace SavingsUserManager
         private void Form1_FormClosed(object send, FormClosedEventArgs e)
         {
             this.Close();
+        }
+
+        private static string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("No network adapters with an IPv4 address in the system!");
         }
 
     }
